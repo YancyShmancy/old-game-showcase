@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+    <title>Game Portfolio</title>
+    
+    <meta charset="utf-8">
+    <meta name="description" content="Game Portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <link type="text/css" rel="stylesheet" href="./assets/css/normalize.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/main.css">
+    
+</head>
+<body>
+    
+    <div id="full-wrapper">
+        <!-- Nav -->
+        
+        <div id="nav">
+            <ul>
+                <li><a href="#">My Projects</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="#">Contact Me</a></li>
+            </ul>
+            
+            <div class="social">
+                
+                <a href="#"><i class="fa fa-github"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-facebook-official"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+            </div>
+        </div>
+        
+        <!-- Player Ship -->
+        <div id="player-ship">
+            <img src="./assets/img/dock-pipe.png" id="dock">
+        </div>
+        
+        <!-- Instructions -->
+        <div id="instructions">
+            <i class="fa fa-caret-square-o-up up"></i>
+            <div class="row">
+                <i class="fa fa-caret-square-o-left"></i>
+                <i class="fa fa-caret-square-o-down"></i>
+                <i class="fa fa-caret-square-o-right"></i>
+            </div>
+            
+            <h2>Use the Arrow Keys to Move Your Ship</h2>
+        </div>
+       
+        <!-- Will not move -->
+
+        <div id="stars-background"></div>
+
+        <!-- Will move slowly -->
+        
+            
+        <div class="text-wrap">
+            <div id="layer-1">
+                <h1>Allison Yancy</h1>
+            </div>
+            
+            <div id="layer-2">
+                <h1>Allison Yancy</h1>
+            </div>
+            
+            <h2>Web Developer</h2> 
+        </div>
+        
+        <div id="planet-1" class="planet"></div>
+        <div id="planet-2" class="planet"></div>
+        <div id="planet-3" class="planet"></div>
+        <div id="planet-4" class="planet"></div> 
+
+        
+
+        <div id="station" class="station-rotate top-layer"></div>
+        
+        <div id="projects" class="top-layer">
+            <h2>My Projects</h2>
+        </div>
+        <div id="about-me" class="top-layer">
+            <h2>About Me</h2>
+        </div>
+        <div id="contact" class="top-layer">
+            <h2>Contact Me</h2>
+        </div>
+        
+    </div>
+    
+    <div class="lb-bg"></div>
+    <div class="lightbox" id="projects-lb">
+        <h1>My Projects</h1>
+        <div id="projects-wrap">
+            <a href="#" class="project" id="webDev"></a>
+            <a href="#" class="project" id="programming"></a>
+            <a href="#" class="project" id="animation"></a>
+            <a href="#" class="project" id="design"></a>
+        </div>
+    </div>
+    
+    <div class="lightbox" id="aboutMe-lb">
+        <h1>About Me</h1>
+        <div id="aboutMe-wrap">
+            <div class="text">
+                <h2>Hello!</h2>
+                <p>
+                I'm Allison. You're currently on a site that I made earlier in my career at the Creative Circus, which was used to showcase my work from the quarter.
+                <br>
+                <br>
+                Have fun playing with this totally awesome thing that I made!
+                </p>
+            </div>
+                
+            <div id="aboutMe-picture">
+            </div>
+        </div>
+    </div>
+    
+    <div id="contact-info">
+        <h1>Contact Me</h1>
+        <i class="fa fa-microphone"></i><a href="tel:678-918-0438">678 <span> / </span> 918 <span> / </span> 0438 </a>
+        <br>
+        <i class="fa fa-envelope-o"></i><a href="mailto: yancyshmancy@gmail.com"><span>yancy</span>shmancy<span>@</span>gmail<span>.</span>com</a>
+        <br>
+        <i class="fa fa-file-pdf-o"></i><a href="#">Check out my resume</a>
+    </div>
+    
+    <!--CDN link for the latest TweenMax-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="./assets/js/jquery-2.1.4.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

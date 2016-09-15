@@ -1,0 +1,591 @@
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: summitThinDisplay;
+  src: url("../fonts/Summit_TrueType/SummitRegular-Display.ttf");
+}
+
+@font-face {
+  font-family: summitShadow;
+  src: url("../fonts/Summit_TrueType/SummitRegular-Shadow.ttf");
+}
+
+@font-face {
+  font-family: Ubuntu;
+  src: url("../fonts/Ubuntu/Ubuntu-C.ttf");
+}
+
+/*****************
+Variables 
+*****************/
+.station-rotate {
+  animation: station-rotate;
+  animation-duration: 120s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+}
+
+@keyframes station-rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#nav {
+  width: 60%;
+  margin: 10px 20%;
+  border: 3px solid #fff;
+  background: rgba(25, 25, 25, 0.8);
+  height: 50px;
+  z-index: 6;
+  position: fixed;
+  bottom: 0;
+}
+
+#nav ul {
+  float: left;
+  width: 50%;
+  padding: 0;
+}
+
+#nav ul li {
+  display: inline;
+}
+
+#nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Ubuntu';
+  padding: 20px;
+}
+
+#nav ul li a:hover {
+  color: #c4c4c4;
+}
+
+#nav div.social {
+  float: left;
+  width: 50%;
+  text-align: right;
+}
+
+#nav div.social a {
+  text-decoration: none;
+  color: #fff;
+  line-height: 50px;
+  font-size: 1.8em;
+  padding: 10px;
+}
+
+#nav div.social a:hover {
+  color: #c4c4c4;
+}
+
+/*****************
+Mixins
+*****************/
+#player-ship, #planet-1, #planet-2, #planet-3, #planet-4, #station, #projects, #about-me, #contact {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#projects h2, #about-me h2, #contact h2 {
+  font-size: 1.2em;
+  font-family: 'Ubuntu';
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.top-layer {
+  z-index: 3;
+}
+
+/***************** 
+Main Styles
+******************/
+body, html {
+  height: 100%;
+}
+
+#full-wrapper {
+  position: relative;
+  height: 2000px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#wrapper-mid {
+  z-index: 2;
+}
+
+#wrapper-foreground {
+  z-index: 3;
+}
+
+#player-ship {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  width: 50px;
+  height: 100px;
+  z-index: 5;
+  margin-left: -25px;
+  background-image: url("../img/player-ship.png");
+}
+
+#player-ship #dock {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: 4s all ease-in-out;
+  transform: rotate(180deg) translateX(0) translateY(20px);
+}
+
+#player-ship #dock.active {
+  opacity: 1;
+  transform: rotate(180deg) translateX(-100%) translateY(20px);
+}
+
+.planet {
+  position: absolute;
+  background-position: center;
+}
+
+.text-wrap {
+  position: absolute;
+  top: 500px;
+  right: 20px;
+  z-index: 3;
+  width: 400px;
+  height: 600px;
+  text-align: right;
+}
+
+.text-wrap #layer-1, .text-wrap #layer-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  font-size: 1.5em;
+}
+
+.text-wrap #layer-1 h1 {
+  font-family: 'summitThinDisplay';
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 50px;
+}
+
+.text-wrap #layer-2 h1 {
+  font-family: 'summitShadow';
+  color: rebeccapurple;
+  line-height: 50px;
+}
+
+.text-wrap h2 {
+  width: 200px;
+  position: absolute;
+  top: 125px;
+  right: 20px;
+  color: #fff;
+  font-family: 'Ubuntu';
+  letter-spacing: 2px;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+.planet {
+  z-index: 2;
+}
+
+#planet-1 {
+  width: 300px;
+  height: 300px;
+  top: 0;
+  right: 150px;
+  background-image: url("../img/planet_29.png");
+}
+
+#planet-2 {
+  width: 500px;
+  height: 500px;
+  top: 500px;
+  left: 0;
+  margin-left: -200px;
+  background-image: url("../img/planet_20.png");
+}
+
+#planet-3 {
+  width: 200px;
+  height: 200px;
+  top: 800px;
+  right: 50px;
+  background-image: url("../img/planet_23.png");
+}
+
+#planet-4 {
+  width: 100px;
+  height: 100px;
+  top: 1200px;
+  left: 400px;
+  transform: rotate(160deg);
+  background-image: url("../img/planet_32.png");
+  transition: 8s all;
+}
+
+#stars-background {
+  position: absolute;
+  height: 150%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: url("../img/spr_stars01.png"), url("../img/spr_stars02.png");
+  background-color: black;
+  z-index: 1;
+}
+
+#station {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 700px;
+  height: 700px;
+  margin-top: -250px;
+  margin-left: -350px;
+  background-image: url("../img/spacestation.png");
+}
+
+#projects {
+  position: absolute;
+  top: 600px;
+  left: 100px;
+  height: 400px;
+  width: 150px;
+  background-image: url("../img/projects-ship.png");
+}
+
+#projects h2 {
+  position: absolute;
+  right: -120px;
+  top: 20px;
+}
+
+#about-me {
+  position: absolute;
+  top: 1000px;
+  left: 70%;
+  height: 400px;
+  width: 200px;
+  background-image: url("../img/about-me-ship.png");
+}
+
+#about-me h2 {
+  position: absolute;
+  left: -100px;
+  top: 50px;
+}
+
+#contact {
+  position: absolute;
+  top: 1500px;
+  left: 50%;
+  width: 200px;
+  height: 400px;
+  margin-left: -100px;
+  transform: rotate(90deg);
+  background-image: url("../img/contact-ship.png");
+}
+
+#contact h2 {
+  position: absolute;
+  left: -100px;
+  bottom: 50px;
+  transform: rotate(-90deg);
+}
+
+.lb-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 99999;
+  transform: scale(0);
+}
+
+.lightbox {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  left: 50%;
+  top: 50%;
+  transform: scale(0) translateX(-50%) translateY(-50%);
+  z-index: 1000000;
+  background: #fff;
+  border: 1px solid #fff;
+  transition: 0.5s all ease-in-out;
+  transform-origin: top left;
+  background: url("../textures/metal.jpg") repeat 0 0;
+}
+
+.lightbox h1 {
+  float: left;
+  width: 100%;
+  margin: 0;
+  font-size: 2em;
+  text-align: center;
+  font-family: 'Ubuntu';
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 40px 0;
+  border-bottom: 5px solid #fff;
+  text-transform: uppercase;
+}
+
+.lightbox #projects-wrap {
+  float: left;
+  height: 80%;
+  width: 100%;
+  background: url("../textures/small_steps.png") repeat 0 0;
+}
+
+.lightbox #projects-wrap .project {
+  float: left;
+  width: 40%;
+  height: 200px;
+  margin: 20px 5%;
+  -webkit-box-shadow: 0px 9px 14px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 9px 14px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 9px 14px 0px rgba(0, 0, 0, 0.5);
+  filter: grayscale(80%);
+  -webkit-filter: grayscale(80%);
+}
+
+.lightbox #projects-wrap .project:hover {
+  filter: grayscale(0);
+  -webkit-filter: grayscale(0);
+}
+
+.lightbox #projects-wrap #webDev {
+  background-image: url("../img/logo.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  /* figure out why this isn't working */
+}
+
+.lightbox #projects-wrap #webDev:hover {
+  background-position: center;
+  background-size: 150%;
+}
+
+.lightbox #projects-wrap #programming {
+  background: url("../img/todos.png") no-repeat;
+  background-size: 300%;
+  background-position: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.lightbox #projects-wrap #programming:hover {
+  background-position: center;
+  background-size: 350%;
+}
+
+.lightbox #projects-wrap #animation {
+  background: url("../img/cube.png") no-repeat;
+  background-size: 105%;
+  background-position: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.lightbox #projects-wrap #animation:hover {
+  background-position: center;
+  background-size: 155%;
+}
+
+.lightbox #projects-wrap #design {
+  background-image: url("../img/kevin-smith-logo.jpg");
+  background-repeat: no-repeat;
+  background-color: black;
+  background-size: 100%;
+  background-position: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.lightbox #projects-wrap #design:hover {
+  background-position: center;
+  background-size: 130%;
+}
+
+#aboutMe-wrap {
+  float: left;
+  height: 80%;
+  width: 100%;
+}
+
+#aboutMe-wrap .text {
+  float: left;
+  height: 100%;
+  width: 70%;
+  padding: 40px;
+  margin: 0;
+  background: url("../textures/small_steps.png") repeat 0 0;
+  font-family: 'Ubuntu';
+  font-size: 1.7em;
+}
+
+#aboutMe-wrap .text h2 {
+  color: rebeccapurple;
+  text-decoration: underline;
+}
+
+#aboutMe-wrap #aboutMe-picture {
+  float: left;
+  height: 100%;
+  width: 30%;
+  background: url("../img/me-pic.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-left: 3px solid #fff;
+}
+
+.lb-bg.active {
+  transform: scale(1);
+}
+
+.lightbox.active {
+  transform: scale(1) translateX(-50%) translateY(-50%);
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+#contact-info {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 600px;
+  margin-left: -300px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  height: auto;
+  padding: 10px 0 20px 0;
+  z-index: 1;
+  opacity: 0;
+  transition: 6s all ease-in-out;
+  font-family: 'Ubuntu';
+  font-weight: 300;
+  text-align: center;
+}
+
+#contact-info i {
+  color: rebeccapurple;
+  display: inline;
+}
+
+#contact-info i:after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+}
+
+#contact-info h1 {
+  color: #fff;
+  border-bottom: 4px solid rebeccapurple;
+  padding-bottom: 20px;
+}
+
+#contact-info a {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5em;
+  padding: 5px 0;
+  transition: 0.2s all ease-in-out;
+}
+
+#contact-info a:hover {
+  color: #fff;
+}
+
+#contact-info a:hover > span {
+  color: #fff;
+}
+
+#contact-info a span {
+  color: rebeccapurple;
+  font-weight: 400;
+  transition: 0.1s all ease-in-out;
+}
+
+#contact-info.active {
+  opacity: 1;
+  z-index: 5;
+}
+
+#instructions {
+  position: relative;
+  top: 500px;
+  left: 50%;
+  margin-left: -300px;
+  width: 600px;
+  height: auto;
+  font-size: 1.5em;
+  z-index: 4;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  animation: flashing;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+#instructions h2 {
+  font-size: 0.5em;
+  font-family: 'Ubuntu';
+  text-transform: uppercase;
+}
+
+@keyframes flashing {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+body {
+	overflow: hidden;
+}

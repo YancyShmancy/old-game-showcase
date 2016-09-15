@@ -1,0 +1,8 @@
+#nav {
+  width: 80%;
+  margin: 10px 10%;
+  border: 5px solid #fff;
+  background: rgba(25, 25, 25, 0.6);
+  height: 50px;
+  z-index: 5;
+}
